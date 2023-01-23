@@ -14,6 +14,7 @@ export async function createCard(
         if(!query.status){
             throw new Error();
         }
+        return query;
     } catch (err) {
         console.error(err);
     }
@@ -26,6 +27,7 @@ export async function deleteCard(cardID: number) {
         if(!query.status){
             throw new Error();
         }
+        return query;
     } catch (err) {
         console.error(err);
     }
@@ -38,6 +40,7 @@ export async function getCard(cardID: number) {
         if(!query.status){
             throw new Error();
         }
+        return query;
     } catch (err) {
         console.error(err);
     }
@@ -50,6 +53,7 @@ export async function getAllCard() {
         if(!query.status){
             throw new Error();
         }
+        return query;
     } catch (err) {
         console.error(err);
     }

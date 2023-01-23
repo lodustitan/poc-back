@@ -16,9 +16,9 @@ export async function addCard(req: Request, res: Response){
 
 export async function getCards(req: Request, res: Response){
     try {
-        const { id } = req.query;
+        const { id } = req.params;
         let query;
-        if(id && isNaN(id as any)){
+        if(id && !isNaN(id as any)){
             const id_number = Number(id);
             query = await services.getCard(id_number);
         }else{
@@ -33,11 +33,16 @@ export async function getCards(req: Request, res: Response){
 
 export async function removeCard(req: Request, res: Response){
     try {
-        const { id } = req.body;
+        const { id } = req.params;
 
-        const query = await services.deleteCard(id);
+        if(id && !isNaN(id as any)){
+            const id_number = Number(id);
+            const query = await services.deleteCard(id_number);    
+            return res.status(200).send(query);
+        }else{
+            throw new Error(); 
+        }
         
-        return res.status(200).send(query);
     } catch (error) {
         console.error(error);
         return res.sendStatus(404);
