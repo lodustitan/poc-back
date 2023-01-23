@@ -1,8 +1,8 @@
-import movies from "./movies.route";
+import cards from "./cards.route";
 import wishlist from "./wishlist.route";
 
 const routes = {
-    movies,
+    cards,
     wishlist
 }
 

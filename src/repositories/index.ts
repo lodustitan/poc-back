@@ -1,3 +1,3 @@
-import * as movies_repository from "./movies.repository";
+import * as cards_repository from "./cards.repository";
 
-export default movies_repository;
+export default cards_repository;

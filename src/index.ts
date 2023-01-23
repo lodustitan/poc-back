@@ -11,7 +11,6 @@ const express_app: Express = express();
 express_app.use(cors());
 express_app.use(json());
 
-express_app.use('/movies', routes.movies);
-express_app.use('/wishlist', routes.wishlist);
+express_app.use('/cards', routes.cards);
 
 express_app.listen(PORT, () => console.log(`Server 'Express' listening on port: ${PORT}`));
